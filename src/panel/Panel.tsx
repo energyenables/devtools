@@ -1,6 +1,7 @@
 import React from 'react';
 
-interface PanelProps {}
+// Using Record<never, never> instead of empty interface
+type PanelProps = Record<string, never>;
 
 const Panel: React.FC<PanelProps> = () => {
   return (
