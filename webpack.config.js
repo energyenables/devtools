@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    panel: './src/panel/index.js',
-    devtools: './src/devtools/index.js',
-    background: './src/background/index.js'
+    panel: './src/panel/index.tsx',
+    devtools: './src/devtools/index.ts',
+    background: './src/background/index.ts'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -14,6 +14,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -49,6 +54,6 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   }
 };

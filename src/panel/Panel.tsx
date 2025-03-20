@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Panel = () => {
+interface PanelProps {}
+
+const Panel: React.FC<PanelProps> = () => {
   return (
     <div className="panel-container">
       <header className="panel-header">
